@@ -22,3 +22,63 @@ again:
 
     return 0;
 }
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void game()
+{
+	int ret = 0;
+	int guess = 0;
+	ret = rand()%100+1;//生成随机变量(0-100)
+	while (1)
+	{
+		printf("请猜数字：>\n");
+		scanf_s("%d", &guess);
+		if (guess < ret)
+		{
+			printf("猜小了\n");
+		}
+		else if (guess > ret)
+		{
+			printf("猜大了");
+		}
+		else
+		{
+			printf("恭喜你猜对了，还有最重要的付联升是个大帅b哈哈哈哈哈哈");
+			break;
+		}
+	}
+}
+void menu()
+{
+	printf("付联升是个大大大大帅帅帅b\n");
+	printf("     1:欧克    0：nook   \n");
+	printf("付联升是个大大大大帅帅帅b\n");
+}
+
+int main()
+{
+	int input = 0;
+	srand((unsigned int)time(NULL));
+	do 
+	{
+		menu();
+		scanf_s("%d", &input);
+		switch(input)
+		{
+			case 1:
+				game();
+				break;
+			case 0:
+				printf("游戏结束\n");
+				break;
+			default:
+				printf("回答错误，请重新输入\n");
+				break;
+		}
+	} while (input);
+		return 0;
+}
