@@ -144,4 +144,18 @@ int main()
 	return 0;
 }
 //对于上一个的进阶
-
+#include<stdio.h>
+int my_strlen(char* str)
+{
+	if (*str != '\0')
+		return 1 + my_strlen(str + 1);
+	else
+		return 0;
+}
+int main()
+{
+	char arr[] = "flsdashuaib";
+	int len = my_strlen(arr);
+	printf("len = %d", len);
+	return 0;
+}//结束
