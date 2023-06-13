@@ -180,4 +180,75 @@ int main()
 	printf("%d\n", ret);
 	return 0;
 }
-//递归
+//递归(下边这个哥们运行不了）
+#include<stdio.h>
+int Fib(int n)
+{
+	if (n <= 2)
+		return 1;
+	else
+		return Fib(n - 1) + Fib(n - 2);
+}
+int main()
+{
+	int n = 0;
+	int ret = 1;
+	scanf_s("%d", n);
+	ret = Fib(n);
+	printf("%d", ret);
+	return 0;
+}
+//
+//这个代码我也忘了就它是谁从哪来到哪去？
+#include<stdio.h>
+int Fac1(int n)
+{
+	int i = 0;
+	int ret = 1;
+	for (i = 1; i <= n; i++)
+	{
+		ret *= i;
+	}
+	return ret;
+}
+int Fac2( int n)//Fac应该是对于Face的优化
+{
+	if (n == 1)
+		return 1;
+	else
+		return n * Fac2(n-1);
+}
+int main()
+{
+	int n = 0;
+	int ret = 0;
+	scanf_s("%d", &n);
+	ret = Fac2(n);
+	printf("%d\n", ret);
+	return 0;
+}
+//用递归的方法解决上上个问题并且计算量变小先不管对错就一个字快！！！红红火火恍恍惚惚
+#include<stdio.h>
+int Fib(int n)
+{
+	int a = 1;
+	int b = 1;
+	int c = 1;
+	while (n > 2)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+		n--;
+	}
+	return c;
+}
+int main()
+{
+	int n = 0;
+	int ret = 0;
+	scanf_s("%d", &n);
+	ret = Fib(n);
+	printf("%d", ret);
+	return 0;
+}
