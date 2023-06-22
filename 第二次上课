@@ -397,4 +397,13 @@ int main()
 	}
 	return 0;
 }
-//
+//see    see
+#include<stdio.h>
+int main()
+{
+	int arr[10] = { 1,2,3,4,5 };
+		printf("%p\n", arr);//打印的是arr这个数组看看是不是只打印首元素地址名
+		printf("%p\n", &arr[0]);//取地址打印首元素地址名
+		printf("%d", *arr);//对于第一次打印的arr地址进行解引用看看是否为1
+	return 0;
+}
